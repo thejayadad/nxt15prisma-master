@@ -1,9 +1,23 @@
-import Image from "next/image";
+import PostCard from "@/components/post/post-card";
+import { getAllPost } from "@/lib/actions/get-post";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPost()
   return (
     <div>
-      homePage
+      <div className="mx-auto max-w-screen-lg px-4">
+        <h1 className="font-bold text-xl text-gray-500 leading-tight">Fitness Chronicles</h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 pt-2">
+        {
+          posts?.map(post => (
+            <PostCard
+            key={post.id}
+            post={post}
+            />
+          ))
+        }
+        </div>
+      </div>
     </div>
   );
 }

@@ -69,3 +69,11 @@ export const createPost = async (prevState: any, formData: FormData) => {
 ```
 - show the errors | be sure toe add them to the form and test
 - complete the createPost action
+- add submit button
+
+
+#POST CARD COMPONENT
+- getall all posts action
+- add to the home page
+- create post card component
+- update the ms config

@@ -2,6 +2,7 @@
 import React from 'react';
 import { createPost } from '@/lib/actions/create-post';
 import { useActionState } from 'react';
+import { SubmitButton } from '../button/submit-button';
 
 interface UserEmailProps {
     userEmail: string; // Accept userEmail as a prop
@@ -30,7 +31,7 @@ const CreateForm: React.FC<UserEmailProps> = ({ userEmail }) => { // Use the pro
                         <p className='text-sm text-red-500 mt-2'>{state?.error?.imageUrl?.[0]}</p> {/* Access first error message */}
                     </div>
                 </div>
-                <button className='px-5 py-3 bg-purple-300' type='submit'>Create Post</button>
+                <SubmitButton label='Create' />
             </form>
         </div>
     );

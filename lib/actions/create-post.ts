@@ -17,7 +17,7 @@ const PostSchema = z.object({
       }),
 });
 
-export const createPost = async (prevState: any, formData: FormData) => {
+export const createPost = async (prevState: unknown, formData: FormData) => {
     const validatedFields = PostSchema.safeParse(
         Object.fromEntries(formData.entries())
     );
