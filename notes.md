@@ -77,3 +77,6 @@ export const createPost = async (prevState: any, formData: FormData) => {
 - add to the home page
 - create post card component
 - update the ms config
+- add the session to show edit and delete
+- npm install react-icons
+- test it out, log in with a different user

@@ -1,8 +1,14 @@
+import { auth } from "@/auth";
 import PostCard from "@/components/post/post-card";
 import { getAllPost } from "@/lib/actions/get-post";
 
 export default async function Home() {
   const posts = await getAllPost()
+  const session = await auth();
+  const activeUser = session?.user.email
+
+
+
   return (
     <div>
       <div className="mx-auto max-w-screen-lg px-4">
@@ -11,6 +17,7 @@ export default async function Home() {
         {
           posts?.map(post => (
             <PostCard
+            activeUserEmail={activeUser}
             key={post.id}
             post={post}
             />
