@@ -80,3 +80,15 @@ export const createPost = async (prevState: any, formData: FormData) => {
 - add the session to show edit and delete
 - npm install react-icons
 - test it out, log in with a different user
+
+
+#SINGLE POST PAGE
+- get post byid action
+- create the page
+- maybe a page component
+
+#UPDATE POST PAGE
+
+
+
+#DELETE POST CARD ACTION

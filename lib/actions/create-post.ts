@@ -1,6 +1,6 @@
 'use server'
 import { z } from "zod";
-import { put, del } from "@vercel/blob";
+import { put } from "@vercel/blob";
 import { prisma } from "../prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

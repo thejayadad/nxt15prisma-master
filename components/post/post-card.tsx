@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { FiEdit, FiTrash2 } from 'react-icons/fi';
+import { DeleteButton } from '../button/delete-post-btn';
+import Link from 'next/link';
 
 interface PostCardProps {
   post: {
@@ -42,12 +44,13 @@ const PostCard: React.FC<PostCardProps> = ({ post, activeUserEmail }) => {
         </div>
         {activeUserEmail === post.userEmail && isHovered && ( // Show edit and delete icons if the user is active
           <div className='absolute top-2 right-2 flex space-x-2'>
-            <button className='text-gray-600 hover:text-gray-800 transition-colors'>
+            <Link
+            href={`/post/${post.id}/edit`}
+            className='text-gray-600 hover:text-gray-800 transition-colors'>
               <FiEdit size={20} className='text-blue-600' />
-            </button>
-            <button className='text-gray-600 hover:text-gray-800 transition-colors'>
-              <FiTrash2 size={20} />
-            </button>
+            </Link>
+              <DeleteButton  id={post.id}/>
+
           </div>
         )}
         <span className='text-crimson-600 font-medium border-b border-crimson-600 hover:text-crimson-800 transition-colors duration-200'>
